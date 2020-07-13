@@ -4,14 +4,13 @@ var cognome;
 var check=false;
 
 cognome = prompt('Inserisci il tuo cognome');
-console.log(cognome);
 
 for(i=0; i<listaCognomi.length; i++){
     if(cognome == listaCognomi[i]){
         check=true;
     }
 }
-console.log(check);
+
 if(check==true){
     alert("Cognome già esistente!")
 } else {
