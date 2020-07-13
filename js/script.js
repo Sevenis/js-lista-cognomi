@@ -25,18 +25,22 @@ if(check == true){
 // ORDINAMENTO LISTA
 for (var j = 0; j < listaCognomi.length; j++){
     listaCognomiOrdinata.push(listaCognomi[j].toLowerCase());
-    listaCognomiOrdinata.sort();
 }
+listaCognomiOrdinata.sort();
 
 // STAMPA LISTA ORDINATA
 for (var k = 0; k < listaCognomiOrdinata.length; k++) {
     document.getElementById('lista').innerHTML += '<li>' + listaCognomiOrdinata[k].charAt(0).toUpperCase()+listaCognomiOrdinata[k].slice(1)+ '</li>';
 }
 
-// CHECK POSIZIONE "UMANA" COGNOME
-for (var indice = 0; indice < listaCognomiOrdinata.length; indice ++){
-    if (listaCognomiOrdinata[indice] == cognome.toLowerCase()){
-        indiceReale = indice + 1;
-    }
-}
+// CHECK POSIZIONE "UMANA" COGNOME - OPZIONE 1
+// for (var indice = 0; indice < listaCognomiOrdinata.length; indice ++){
+//     if (listaCognomiOrdinata[indice] == cognome.toLowerCase()){
+//         indiceReale = indice + 1;
+//     }
+// }
+
+// CHECK POSIZIONE "UMANA" COGNOME - OPZIONE 2
+
+indiceReale = listaCognomiOrdinata.indexOf(cognome.toLowerCase())+1;
 document.getElementById('indice-reale').innerHTML = 'La sua posizione reale nell\'array è: ' + indiceReale;
