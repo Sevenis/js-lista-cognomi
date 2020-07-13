@@ -3,13 +3,14 @@ var listaCognomi = ['Bianchi', 'Rossi', 'Duzioni', 'Balsano', 'Verdi'];
 var listaCognomiOrdinata = [];
 var cognome;
 var check = false;
+var indiceReale = 0;
 
 // INPUT
 cognome = prompt('Inserisci il tuo cognome');
 
 // CHECK PRE ESISTENZA COGNOME NELLA LISTA
 for(var i = 0; i < listaCognomi.length; i++){
-    if(cognome == listaCognomi[i]){
+    if(cognome.toLowerCase() == listaCognomi[i].toLowerCase()){
         check=true;
     }
 }
@@ -31,3 +32,11 @@ for (var j = 0; j < listaCognomi.length; j++){
 for (var k = 0; k < listaCognomiOrdinata.length; k++) {
     document.getElementById('lista').innerHTML += '<li>' + listaCognomiOrdinata[k].charAt(0).toUpperCase()+listaCognomiOrdinata[k].slice(1)+ '</li>';
 }
+
+// CHECK POSIZIONE "UMANA" COGNOME
+for (var indice = 0; indice < listaCognomiOrdinata.length; indice ++){
+    if (listaCognomiOrdinata[indice] == cognome.toLowerCase()){
+        indiceReale = indice + 1;
+    }
+}
+document.getElementById('indice-reale').innerHTML = 'La sua posizione reale nell\'array è: ' + indiceReale;
