@@ -5,8 +5,10 @@ var cognome;
 var check = false;
 var indiceReale = 0;
 
-// INPUT
+// INPUT + check Inserimento
+do {
 cognome = prompt('Inserisci il tuo cognome');
+} while(cognome == "");
 
 // CHECK PRE ESISTENZA COGNOME NELLA LISTA
 for(var i = 0; i < listaCognomi.length; i++){
@@ -41,6 +43,5 @@ for (var k = 0; k < listaCognomiOrdinata.length; k++) {
 // }
 
 // CHECK POSIZIONE "UMANA" COGNOME - OPZIONE 2
-
 indiceReale = listaCognomiOrdinata.indexOf(cognome.toLowerCase())+1;
 document.getElementById('indice-reale').innerHTML = 'La sua posizione reale nell\'array è: ' + indiceReale;
